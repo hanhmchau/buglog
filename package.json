@@ -1,0 +1,16 @@
+{
+  "name": "buglog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^4.1.0"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lodash.debounce": "^4.0.8"
+  }
+}

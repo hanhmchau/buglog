@@ -1,0 +1,25 @@
+{
+	"name": "buglog",
+	"title": "Buglog",
+	"description": "Allow the chat log popout and make it bigger.",
+	"version": "0.0.1",
+	"minimumCoreVersion": "0.5.5",
+	"compatibleCoreVersion": "0.6.5",
+	"author": "Arietta",
+
+	"scripts": [],
+	"esmodules": ["main.js", "scripts/**/*.js", "libs/**/*.js"],
+	"styles": ["dist/buglog.css"],
+
+	"languages": [
+		{
+		  "lang": "en",
+		  "name": "English",
+		  "path": "lang/en.json"
+		}
+	  ],
+	
+	"url": "https://github.com/hanhmchau/buglog",
+	"manifest": "https://raw.githubusercontent.com/hanhmchau/buglog/master/module.json",
+	"download": "https://github.com/hanhmchau/buglog/archive/0.0.1.zip"
+}
