@@ -85,7 +85,7 @@ export default class PopoutableChatLog extends ChatLog {
 	async _renderBatchDown(log, size) {
 		const messages = game.messages.entities.filter((m) => m.visible);
 		const bottommostIndex = messages.findIndex((m) => m.id === this._bottommostId);
-		if (bottommostIndex < game.messages.size - 1) {
+		if (bottommostIndex < messages.size - 1) {
 			const newBottommostIndex = Math.min(bottommostIndex + size, messages.length - 1);
 			const batch = await this._renderBatchHelper(messages, bottommostIndex, newBottommostIndex + 1);
 			this._bottommostId = messages[newBottommostIndex].id;

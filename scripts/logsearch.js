@@ -177,7 +177,7 @@ export default class LogSearch extends Application {
 	async searchInput(searchTerm) {
 		if (searchTerm) {
 			if (searchTerm != this._lastSearchTerm) {
-				const messages = game.messages.entities;
+				const messages = game.messages.entities.filter(m => m.visible);
 				this._lastSearchTerm = searchTerm;
 				// this.results = messages.filter((m) => m.data.content.toLowerCase().includes(searchTerm));
 				this.results = [];
