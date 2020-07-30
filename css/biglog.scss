@@ -161,6 +161,10 @@
 						right: 100px;
 						width: auto;
 					}
+
+					img {
+						flex: 0 !important;
+					}
 				}
 
 				.message {
