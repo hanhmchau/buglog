@@ -149,21 +149,35 @@
 
 					.message-metadata {
 						text-align: right;
+						flex: 1;
 					}
 
 					.message-sender {
 						color: #4b4a44;
+						flex: 0 !important;
+						align-self: center;
+					}
+
+					.whisper-to {
+						display: block;
+						font-size: 12px;
+						width: 100%;
+						flex: 1 1 100% !important;
 					}
 
 					.jump {
 						position: absolute;
 						top: 6px;
-						right: 100px;
+						right: 110px;
 						width: auto;
 					}
 
 					img {
 						flex: 0 !important;
+					}
+
+					.message-content {
+						margin-top: 5px;
 					}
 				}
 
