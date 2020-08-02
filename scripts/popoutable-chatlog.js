@@ -87,7 +87,7 @@ export default class PopoutableChatLog extends ChatLog {
 		const bottommostIndex = messages.findIndex((m) => m.id === this._bottommostId);
 		if (bottommostIndex < messages.length - 1) {
 			const newBottommostIndex = Math.min(bottommostIndex + size, messages.length - 1);
-			const batch = await this._renderBatchHelper(messages, bottommostIndex, newBottommostIndex + 1);
+			const batch = await this._renderBatchHelper(messages, bottommostIndex + 1, newBottommostIndex + 1);
 			this._bottommostId = messages[newBottommostIndex].id;
 			$(log).append(batch);
 		}
