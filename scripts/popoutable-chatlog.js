@@ -103,9 +103,9 @@ export default class PopoutableChatLog extends ChatLog {
 	}
 
 	registerMessageRange() {
-		const messages = game.messages.entities.filter((m) => m.visible);
-		this._bottommostId = messages[messages.length - 1].id;
-		this._topmostId = messages[Math.max(0, messages.length - CONFIG.ChatMessage.batchSize)].id;
+		const lastBatch = game.messages.entities.slice(- CONFIG.ChatMessage.batchSize).filter(m => m.visible);
+		this._bottommostId = lastBatch[lastBatch.length - 1].id;
+		this._topmostId = lastBatch[0].id;
 	}
 
 	async onScrollPopoutLog(event) {
