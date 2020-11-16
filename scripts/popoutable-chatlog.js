@@ -21,14 +21,6 @@ export default class PopoutableChatLog extends ChatLog {
 	}
 
 	/** @override */
-	static get defaultOptions() {
-		return mergeObject(super.defaultOptions, {
-			originalClass: ChatLog,
-			baseApplication: 'ChatLog'
-		});
-	}
-
-	/** @override */
 	renderPopout(original) {
 		const pop = super.createPopout();
 		pop.render(true);

@@ -2,6 +2,7 @@ const inherits =
 	typeof Object.setPrototypeOf === 'function'
 		? function (ctor, superCtor) {
 				ctor.super_ = superCtor;
+				Object.setPrototypeOf(ctor, superCtor);
 				Object.setPrototypeOf(ctor.prototype, superCtor.prototype);
 		  }
 		: typeof Object.create === 'function'

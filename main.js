@@ -24,8 +24,8 @@ Hooks.once('ready', () => {
 
 Hooks.on('renderPopoutableChatLog', async (obj, html, data) => {
 	await BugLog.renderPopout();
-	Hooks.call('renderSidebarTab', obj, html, data);
-	Hooks.call('renderScrollableChatLog', obj, html, data);
+	// Hooks.call('renderSidebarTab', obj, html, data);
+	// Hooks.call('renderScrollableChatLog', obj, html, data);
 });
 
 Hooks.on('closeScrollableChatLog', async (obj, html, data) => {
