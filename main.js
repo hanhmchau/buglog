@@ -5,9 +5,9 @@ import inherits from './libs/util-inherits.js';
 
 class BugModuleConfig {
 	static init() {
-		if (game.modules.get('chat-scrolling') && game.modules.get('chat-scrolling').active) {
-			inherits(PopoutableChatLog, ScrollableChatLog);
-		}
+// 		if (game.modules.get('chat-scrolling') && game.modules.get('chat-scrolling').active) {
+// 			inherits(PopoutableChatLog, ScrollableChatLog);
+// 		}
 	}
 }
 
