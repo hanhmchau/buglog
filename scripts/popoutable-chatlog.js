@@ -95,7 +95,7 @@ export default class PopoutableChatLog extends ChatLog {
 	}
 
 	registerMessageRange() {
-		const lastBatch = game.messages.entities.slice(- CONFIG.ChatMessage.batchSize).filter(m => m.visible);
+		const lastBatch = game.messages.entities.slice(-CONFIG.ChatMessage.batchSize).filter((m) => m.visible);
 		this._bottommostId = lastBatch[lastBatch.length - 1].id;
 		this._topmostId = lastBatch[0].id;
 	}
@@ -113,5 +113,49 @@ export default class PopoutableChatLog extends ChatLog {
 		}
 		// Restore the rendered state
 		this._state = Application.RENDER_STATES.RENDERED;
+	}
+
+	_getEntryContextOptions(args) {
+		return [
+			...super._getEntryContextOptions(args),
+			{
+				name: 'Delete',
+				icon: '<i class="fas fa-trash"></i>',
+				callback: (header) => {
+					const chatData = ui.chat.collection.get($(header).attr('data-message-id'));
+					new Dialog({
+						title: `Delete Message`,
+						content: `
+							<div id="preview-delete-dialog">
+								<h4 class="dialog-prompt">Are you sure you want to delete this message?</h4>
+								<div id="chat-log" 
+								class="preview-delete"
+									style="
+										height: ${header[0].offsetHeight}px;
+								">
+								${header[0].outerHTML}
+								</div> 
+							</div>
+						   `,
+						buttons: {
+							deletemsg: {
+								label: `Delete`,
+								callback: () => chatData.delete()
+							},
+							cancel: {
+								label: 'Cancel'
+							}
+						}
+					}).render(true);
+				}
+			}
+		];
+	}
+
+	_contextMenu(html) {
+		// Entry Context
+		const entryOptions = this._getEntryContextOptions();
+		Hooks.call(`get${this.constructor.name}EntryContext`, html, entryOptions);
+		if (entryOptions) new ContextMenu(html, '.message', entryOptions);
 	}
 }

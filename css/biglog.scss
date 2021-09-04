@@ -281,3 +281,25 @@
 		}
 	}
 }
+
+#preview-delete-dialog {
+	.dialog-prompt {
+		margin-top: 5px;
+	}
+
+	.preview-delete {
+		margin: 10px 0 5px 0 !important;
+		max-height: 500px;
+		overflow: auto;
+
+		#context-menu {
+			display: none;
+		}
+	}
+}
+
+.dialog-button.deletemsg {
+	background-color: #ff5252 !important;
+	color: white !important;
+	border: none !important;
+}
