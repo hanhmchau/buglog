@@ -139,17 +139,16 @@ export default class PopoutableChatLog extends ChatLog {
 
 	_previewDelete(header) {
 		const chatData = ui.chat.collection.get($(header).attr('data-message-id'));
+		const element = $(header[0]).clone().removeClass('continued').addClass('leading');
+		console.warn($(element)[0])
 		new Dialog({
 			title: `Delete Message`,
 			content: `
 				<div id="preview-delete-dialog">
 					<h4 class="dialog-prompt">Are you sure you want to delete this message?</h4>
 					<div id="chat-log" 
-					class="preview-delete"
-						style="
-							height: ${header[0].offsetHeight}px;
-					">
-					${header[0].outerHTML}
+					class="preview-delete">
+					${$(element)[0].outerHTML}
 					</div> 
 				</div>
 			   `,
